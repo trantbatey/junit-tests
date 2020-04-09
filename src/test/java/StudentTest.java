@@ -21,7 +21,6 @@ public class StudentTest {
         assertSame(0, fer.getGrades().size());
     }
 
-
     @Test
     public void testAddGrade(){
         Student fer = new Student(1L, "fer");

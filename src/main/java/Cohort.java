@@ -24,4 +24,11 @@ public class Cohort {
     public List<Student> getStudents() {
         return students;
     }
+
+    public Student findStudentById(int id) throws Exception {
+        for (Student student : students) {
+            if (student.getId() == id) return student;
+        }
+        throw new Exception("Student not found");
+    }
 }
