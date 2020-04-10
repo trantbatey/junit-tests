@@ -20,6 +20,33 @@ public class StudentTest {
     }
 
     @Test
+    public void testGetId() {
+        assertNotNull(studentOne.getId());
+    }
+
+    @Test
+    public void testGetName() {
+        assertEquals("Vivian", studentOne.getName());
+    }
+
+    @Test
+    public void testAddGrade() {
+        Student s = new Student("New");
+        s.addGrade(98);
+        assertEquals(98, s.getGradeAverage());
+    }
+
+    @Test
+    public void testGetGradeAverage() {
+        Student s = new Student("New");
+        s.addGrade(100);
+        s.addGrade(90);
+        s.addGrade(80);
+        s.addGrade(70);
+        assertEquals(85, s.getGradeAverage());
+    }
+
+    @Test
     public void testIfConstructorWorked() {
         Student student = new Student();
         assertNotNull(student);
@@ -46,16 +73,15 @@ public class StudentTest {
         long count = Student.getCount();
         String expected = "Trant";
         Student student = new Student(expected);
-        assertEquals("Test ID 1", expected, student.getName());
+        assertEquals("Test name access", expected, student.getName());
     }
 
     @Test
     public void testSettingAndGettingTheName() {
-        long count = Student.getCount();
         String expected = "Trant";
         Student student = new Student();
         student.setName(expected);
-        assertEquals("Test ID 1", expected, student.getName());
+        assertEquals("Test name get & set", expected, student.getName());
     }
 
     @Test

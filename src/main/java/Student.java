@@ -55,7 +55,6 @@ public class Student {
     }
 
     public void updateGrade(int index, int newGrade) {
-        grades.remove(index);
-        grades.add(index, newGrade);
+        grades.set(index, newGrade);
     }
 }
